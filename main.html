@@ -1,1 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Festival Vibes 2026</title>
 
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#0f0f0f;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      height:100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+        url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero h1{
+      font-size:5rem;
+      color:#ff00cc;
+      text-shadow:0 0 20px #ff00cc;
+    }
+
+    .hero p{
+      font-size:1.4rem;
+      margin:20px 0;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      background:#ff00cc;
+      color:white;
+      text-decoration:none;
+      border-radius:50px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:#00e1ff;
+      transform:scale(1.05);
+    }
+
+    section{
+      padding:80px 10%;
+    }
+
+    h2{
+      font-size:2.5rem;
+      margin-bottom:40px;
+      text-align:center;
+      color:#00e1ff;
+    }
+
+    .artists{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#1b1b1b;
+      border-radius:20px;
+      overflow:hidden;
+      transition:0.3s;
+      box-shadow:0 0 15px rgba(255,255,255,0.05);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 20px #ff00cc;
+    }
+
+    .card img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+    }
+
+    .card h3{
+      padding:20px;
+      font-size:1.5rem;
+    }
+
+    .schedule{
+      background:#161616;
+      border-radius:20px;
+      padding:30px;
+      max-width:800px;
+      margin:auto;
+    }
+
+    .schedule-item{
+      display:flex;
+      justify-content:space-between;
+      padding:15px 0;
+      border-bottom:1px solid #333;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:black;
+      color:#888;
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size:3rem;
+      }
+
+      .hero p{
+        font-size:1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="hero">
+      <h1>Festival Vibes 2026</h1>
+      <p>3 dias de música, energia e experiências inesquecíveis</p>
+      <a href="#tickets" class="btn">Comprar Bilhete</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Artistas</h2>
+
+    <div class="artists">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop" alt="">
+        <h3>DJ Neon</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?q=80&w=1200&auto=format&fit=crop" alt="">
+        <h3>Electric Waves</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1200&auto=format&fit=crop" alt="">
+        <h3>Night Pulse</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Horários</h2>
+
+    <div class="schedule">
+
+      <div class="schedule-item">
+        <span>18:00</span>
+        <span>DJ Neon</span>
+      </div>
+
+      <div class="schedule-item">
+        <span>20:00</span>
+        <span>Electric Waves</span>
+      </div>
+
+      <div class="schedule-item">
+        <span>22:00</span>
+        <span>Night Pulse</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="tickets" style="text-align:center;">
+    <h2>Bilhetes</h2>
+    <p style="margin-bottom:30px;font-size:1.2rem;">
+      Garante já o teu lugar no maior festival do verão.
+    </p>
+
+    <a href="#" class="btn">Reservar Agora</a>
+  </section>
+
+  <footer>
+    © 2026 Festival Vibes — Todos os direitos reservados
+  </footer>
+
+</body>
+</html>
