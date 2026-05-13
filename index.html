@@ -1,207 +1,412 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Festival Vibes 2026</title>
+  <title>Sunflowers Festival 2026</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     body{
-      background:#0f0f0f;
-      color:white;
-      overflow-x:hidden;
+      background:#fff8e7;
+      color:#333;
+      line-height:1.6;
     }
 
     header{
-      height:100vh;
       background:
-        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
-        url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=1600&auto=format&fit=crop');
+      linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=1600&auto=format&fit=crop');
+
       background-size:cover;
       background-position:center;
+      height:100vh;
+
       display:flex;
       justify-content:center;
       align-items:center;
       text-align:center;
-      padding:20px;
+
+      color:white;
     }
 
     .hero h1{
-      font-size:5rem;
-      color:#ff00cc;
-      text-shadow:0 0 20px #ff00cc;
+      font-size:70px;
+      color:#ffd54f;
+      margin-bottom:20px;
     }
 
     .hero p{
-      font-size:1.4rem;
-      margin:20px 0;
+      font-size:25px;
+      margin-bottom:30px;
     }
 
     .btn{
-      display:inline-block;
-      padding:15px 35px;
-      background:#ff00cc;
-      color:white;
+      background:#f6c945;
+      color:black;
       text-decoration:none;
-      border-radius:50px;
-      transition:0.3s;
+      padding:15px 35px;
+      border-radius:30px;
       font-weight:bold;
+      transition:0.3s;
     }
 
     .btn:hover{
-      background:#00e1ff;
-      transform:scale(1.05);
+      background:#ffe082;
+    }
+
+    nav{
+      background:#4caf50;
+      padding:15px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    nav ul{
+      display:flex;
+      justify-content:center;
+      list-style:none;
+      gap:30px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
     }
 
     section{
-      padding:80px 10%;
+      padding:70px 10%;
     }
 
     h2{
-      font-size:2.5rem;
-      margin-bottom:40px;
       text-align:center;
-      color:#00e1ff;
+      color:#4caf50;
+      margin-bottom:40px;
+      font-size:40px;
     }
 
-    .artists{
+    .about,
+    .media,
+    .contact{
+      text-align:center;
+      max-width:900px;
+      margin:auto;
+      font-size:20px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      background:white;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    table th,
+    table td{
+      padding:15px;
+      border:1px solid #ddd;
+      text-align:center;
+    }
+
+    table th{
+      background:#4caf50;
+      color:white;
+    }
+
+    .cards{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
       gap:25px;
     }
 
     .card{
-      background:#1b1b1b;
-      border-radius:20px;
-      overflow:hidden;
-      transition:0.3s;
-      box-shadow:0 0 15px rgba(255,255,255,0.05);
-    }
-
-    .card:hover{
-      transform:translateY(-10px);
-      box-shadow:0 0 20px #ff00cc;
-    }
-
-    .card img{
-      width:100%;
-      height:250px;
-      object-fit:cover;
+      background:white;
+      padding:25px;
+      border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      text-align:center;
     }
 
     .card h3{
-      padding:20px;
-      font-size:1.5rem;
+      color:#f6c945;
+      margin-bottom:15px;
     }
 
-    .schedule{
-      background:#161616;
-      border-radius:20px;
-      padding:30px;
-      max-width:800px;
-      margin:auto;
-    }
-
-    .schedule-item{
+    .tickets{
       display:flex;
-      justify-content:space-between;
-      padding:15px 0;
-      border-bottom:1px solid #333;
+      justify-content:center;
+      gap:30px;
+      flex-wrap:wrap;
+    }
+
+    .ticket{
+      background:white;
+      padding:30px;
+      width:250px;
+      border-radius:15px;
+      text-align:center;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .ticket h3{
+      color:#4caf50;
+      margin-bottom:15px;
+    }
+
+    .price{
+      font-size:40px;
+      color:#f6c945;
+      margin:20px 0;
+      font-weight:bold;
     }
 
     footer{
+      background:#4caf50;
+      color:white;
       text-align:center;
-      padding:30px;
-      background:black;
-      color:#888;
+      padding:20px;
+      margin-top:40px;
     }
 
     @media(max-width:768px){
+
       .hero h1{
-        font-size:3rem;
+        font-size:45px;
       }
 
-      .hero p{
-        font-size:1rem;
+      nav ul{
+        flex-direction:column;
+        text-align:center;
       }
+
     }
+
   </style>
 </head>
 
 <body>
 
   <header>
+
     <div class="hero">
-      <h1>Festival Vibes 2026</h1>
-      <p>3 dias de música, energia e experiências inesquecíveis</p>
-      <a href="#tickets" class="btn">Comprar Bilhete</a>
+
+      <h1>🌻 Sunflowers Festival 2026</h1>
+
+      <p>Powered by Music and Nature</p>
+
+      <a href="#tickets" class="btn">Buy Tickets</a>
+
     </div>
+
   </header>
 
-  <section>
-    <h2>Artistas</h2>
+  <nav>
 
-    <div class="artists">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#sustainability">Sustainability</a></li>
+      <li><a href="#tickets">Tickets</a></li>
+      <li><a href="#media">Media</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <section id="about">
+
+    <h2>About the Festival</h2>
+
+    <div class="about">
+
+      <p>
+        Sunflowers Festival 2026 is a sustainable music festival inspired by
+        the freedom, music and positive atmosphere of the 1970s.
+      </p>
+
+      <br>
+
+      <p>
+        The festival combines live music, renewable energy,
+        eco-friendly activities and nature to create an unforgettable experience.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section id="music">
+
+    <h2>Festival Timetable</h2>
+
+    <table>
+
+      <tr>
+        <th>Time</th>
+        <th>Artist</th>
+        <th>Stage</th>
+      </tr>
+
+      <tr>
+        <td>16:00</td>
+        <td>Solar Waves</td>
+        <td>Main Stage</td>
+      </tr>
+
+      <tr>
+        <td>18:00</td>
+        <td>Green Vibes</td>
+        <td>Sunset Stage</td>
+      </tr>
+
+      <tr>
+        <td>20:00</td>
+        <td>Retro Sound</td>
+        <td>Main Stage</td>
+      </tr>
+
+      <tr>
+        <td>22:00</td>
+        <td>Sunflower DJs</td>
+        <td>Electro Garden</td>
+      </tr>
+
+    </table>
+
+  </section>
+
+  <section id="sustainability">
+
+    <h2>Sustainability Plan</h2>
+
+    <div class="cards">
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop" alt="">
-        <h3>DJ Neon</h3>
+        <h3>☀ Solar Energy</h3>
+
+        <p>
+          Solar panels will provide clean energy for the festival.
+        </p>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?q=80&w=1200&auto=format&fit=crop" alt="">
-        <h3>Electric Waves</h3>
+        <h3>♻ Recycling</h3>
+
+        <p>
+          Recycling stations will be available all around the venue.
+        </p>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1200&auto=format&fit=crop" alt="">
-        <h3>Night Pulse</h3>
+        <h3>🥤 Reusable Cups</h3>
+
+        <p>
+          Reusable cups will reduce plastic waste during the event.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🌱 Local Food</h3>
+
+        <p>
+          Local food trucks will support sustainable businesses.
+        </p>
       </div>
 
     </div>
+
   </section>
 
-  <section>
-    <h2>Horários</h2>
+  <section id="tickets">
 
-    <div class="schedule">
+    <h2>Tickets</h2>
 
-      <div class="schedule-item">
-        <span>18:00</span>
-        <span>DJ Neon</span>
+    <div class="tickets">
+
+      <div class="ticket">
+
+        <h3>Regular Pass</h3>
+
+        <div class="price">35€</div>
+
+        <p>1 Day Access</p>
+
       </div>
 
-      <div class="schedule-item">
-        <span>20:00</span>
-        <span>Electric Waves</span>
+      <div class="ticket">
+
+        <h3>VIP Pass</h3>
+
+        <div class="price">70€</div>
+
+        <p>VIP Area + Backstage Access</p>
+
       </div>
 
-      <div class="schedule-item">
-        <span>22:00</span>
-        <span>Night Pulse</span>
+      <div class="ticket">
+
+        <h3>Weekend Pass</h3>
+
+        <div class="price">90€</div>
+
+        <p>Full Festival Access</p>
+
       </div>
 
     </div>
+
   </section>
 
-  <section id="tickets" style="text-align:center;">
-    <h2>Bilhetes</h2>
-    <p style="margin-bottom:30px;font-size:1.2rem;">
-      Garante já o teu lugar no maior festival do verão.
-    </p>
+  <section id="media">
 
-    <a href="#" class="btn">Reservar Agora</a>
+    <h2>Media & Promotion</h2>
+
+    <div class="media">
+
+      <p>
+        Sunflowers Festival will be promoted through Instagram,
+        TikTok, radio advertisements, posters and online campaigns.
+      </p>
+
+      <br>
+
+      <p>
+        📸 Instagram | 🎵 TikTok | 🎧 Spotify
+      </p>
+
+    </div>
+
+  </section>
+
+  <section id="contact">
+
+    <h2>Contact</h2>
+
+    <div class="contact">
+
+      <p>Email: sunflowersfestival@email.com</p>
+
+      <p>Phone: +351 912 345 678</p>
+
+      <p>Location: Lisbon, Portugal</p>
+
+    </div>
+
   </section>
 
   <footer>
-    © 2026 Festival — Todos os direitos reservados
+
+    <p>🌻 Sunflowers Festival 2026 | Sustainable Music Experience</p>
+
   </footer>
 
 </body>
